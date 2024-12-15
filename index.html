@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What A Shino | ミニマルホームページ</title>
     <style>
+        * {
+            box-sizing: border-box; /* パディングを幅内に含める */
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background: #f5f5f5;
@@ -14,33 +20,36 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            word-wrap: break-word; /* テキストの折り返し */
+            overflow-wrap: break-word;
         }
 
         header, section, footer {
-            width: 90%;
+            width: 100%;
             max-width: 800px;
-            text-align: left;
             padding: 20px;
-            margin: 20px auto;
+            margin: 10px auto;
             border-radius: 10px;
             background: #f5f5f5;
             box-shadow: 2px 2px 4px rgba(100, 149, 237, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.8);
         }
 
         h1, h2 {
-            margin: 0;
-            padding-bottom: 10px;
+            margin-bottom: 10px;
             color: #556;
         }
 
-        p {
+        p, ul {
             margin: 10px 0;
             line-height: 1.6;
         }
 
         ul {
             padding-left: 20px;
-            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 5px;
         }
 
         .button {
@@ -52,6 +61,8 @@
             color: #555;
             background: #f5f5f5;
             box-shadow: 2px 2px 4px rgba(100, 149, 237, 0.2), -2px -2px 4px rgba(255, 255, 255, 0.8);
+            text-align: center;
+            width: auto;
             transition: 0.2s;
         }
 
@@ -59,51 +70,35 @@
             box-shadow: inset 2px 2px 4px rgba(100, 149, 237, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.8);
         }
 
-        footer {
-            text-align: center;
-            font-size: 0.9em;
-            color: #778;
-        }
-
-        /* レスポンシブデザイン */
+        /* レスポンシブ対応 */
         @media (max-width: 768px) {
             body {
                 padding: 10px;
             }
 
+            .button {
+                display: block;
+                width: 100%; /* ボタンを幅いっぱいにする */
+                margin: 10px 0;
+            }
+
             header, section, footer {
                 padding: 15px;
-                margin: 10px auto;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.25rem;
-            }
-
-            .button {
-                padding: 8px 16px;
-                font-size: 0.9rem;
             }
         }
 
         @media (max-width: 480px) {
             h1 {
-                font-size: 1.25rem;
+                font-size: 1.5rem;
             }
 
             h2 {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
 
             .button {
-                display: block;
-                width: 100%;
-                text-align: center;
-                margin: 10px 0;
+                font-size: 0.9rem;
+                padding: 8px 10px;
             }
         }
     </style>
@@ -172,9 +167,8 @@
 </section>
 
 <footer>
-    <p>&copy; 2024 What A Shino</p>
+    <p>© 2024 What A Shino</p>
 </footer>
 
 </body>
 </html>
-
